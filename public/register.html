@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../src/style.css">
+  <script defer src="../src/script.js"></script>
+  <title>Regisztráció</title>
+</head>
+<body>
+  <header>
+    <h2>Regisztráció</h2>
+    <div id="userStatus" class="user-status hidden">
+        <div id="userBadge" class="user-badge"></div>
+        <div id="userMenu" class="user-menu hidden">
+        <button id="logoutBtn">Kijelentkezés</button>
+        </div>
+    </div>
+    <nav>
+      <a href="index.html">Kurzusok</a>
+      <a href="login.html">Belépés</a>
+    </nav>
+  </header>
+  <form onsubmit="return false;">
+    <input id="name" placeholder="Név">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Jelszó">
+    <select id="role">
+      <option value="student">Hallgató</option>
+      <option value="teacher">Oktató</option>
+    </select>
+    <button id="registerBtn">Regisztráció</button>
+  </form>
+</body>
+</html>

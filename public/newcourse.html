@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Új kurzus</title>
+    <link rel="stylesheet" href="../src/style.css">
+    <script defer src="../src/script.js"></script>
+</head>
+<body>
+
+<header>
+    <h2>Kurzuskezelő</h2>
+    <nav>
+        <a href="index.html">Kurzusok</a>
+        <a href="mycourses.html">Saját kurzusaim</a>
+    </nav>
+    <div id="userStatus" class="user-status hidden">
+        <div id="userBadge" class="user-badge"></div>
+        <div id="userMenu" class="user-menu hidden">
+        <button id="logoutBtn">Kijelentkezés</button>
+        </div>
+    </div>
+</header>
+
+<form id="courseForm">
+    <h2>Új kurzus rögzítése</h2>
+    <input type="text" id="title" placeholder="Kurzus neve" required>
+    <textarea id="description" placeholder="Leírás" required></textarea>
+    <button type="submit">Mentés</button>
+</form>
+</body>
+</html>
