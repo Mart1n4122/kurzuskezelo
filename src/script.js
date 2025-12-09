@@ -114,9 +114,11 @@ async function loadCourses() {
         let div = document.createElement("div");
         div.className = "card";
         div.innerHTML = `
-            <h3>${c.title}</h3>
-            <p>${c.description}</p>
-            <p><b>Oktató:</b> ${c.teacher_name}</p>
+            <div class="card-body">
+              <h3>${c.title}</h3>
+              <p>${c.description}</p>
+              <p><b>Oktató:</b> ${c.teacher_name}</p>
+            </div>
         `;
 
         if (user && user.role === "student") {
@@ -207,8 +209,10 @@ async function loadMyCourses() {
             const div = document.createElement("div");
             div.className = "card";
             div.innerHTML = `
-                <h3>${c.title}</h3>
-                <p>${c.description}</p>
+                <div class="card-body">
+                  <h3>${c.title}</h3>
+                  <p>${c.description}</p>
+                </div>
             `;
             list.appendChild(div);
         });
@@ -224,9 +228,11 @@ function renderTeacherCourses(courses, container) {
         const div = document.createElement("div");
         div.className = "card";
         div.innerHTML = `
-            <h3>${c.title}</h3>
-            <p>${c.description}</p>
-            <p class="muted"><small>Kurzus ID: ${c.id}</small></p>
+            <div class="card-body">
+              <h3>${c.title}</h3>
+              <p>${c.description}</p>
+              <p class="muted"><small>Kurzus ID: ${c.id}</small></p>
+            </div>
         `;
         container.appendChild(div);
     });
