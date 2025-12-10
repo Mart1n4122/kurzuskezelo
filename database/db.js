@@ -70,6 +70,41 @@ function seed() {
         hashPassword("password123"),
         "student"
     ).lastInsertRowid;
+    
+    const teacher3 = insertUser.run(
+        "Horváth István",
+        "istvan@example.com",
+        hashPassword("password123"),
+        "teacher"
+    ).lastInsertRowid;
+
+    const teacher4 = insertUser.run(
+        "Kovács Éva",
+        "eva@example.com",
+        hashPassword("password123"),
+        "teacher"
+    ).lastInsertRowid;
+
+    const student3 = insertUser.run(
+        "Varga Péter",
+        "peter@example.com",
+        hashPassword("password123"),
+        "student"
+    ).lastInsertRowid;
+
+    const student4 = insertUser.run(
+        "Farkas Katalin",
+        "kati@example.com",
+        hashPassword("password123"),
+        "student"
+    ).lastInsertRowid;
+
+    const student5 = insertUser.run(
+        "Molnár Dániel",
+        "daniel@example.com",
+        hashPassword("password123"),
+        "student"
+    ).lastInsertRowid;
 
     const insertCourse = db.prepare(`
         INSERT INTO courses (title, description, teacher_id)
@@ -88,6 +123,36 @@ function seed() {
         teacher2
     ).lastInsertRowid;
 
+    const course3 = insertCourse.run(
+        "Adatbázisok SQL",
+        "Relációs adatbázisok és SQL",
+        teacher3
+    ).lastInsertRowid;
+
+    const course4 = insertCourse.run(
+        "React alapok",
+        "Bevezetés a React könyvtárba",
+        teacher4
+    ).lastInsertRowid;
+
+    const course5 = insertCourse.run(
+        "HTML & CSS",
+        "Weboldalak alapjai: HTML és CSS",
+        teacher1
+    ).lastInsertRowid;
+
+    const course6 = insertCourse.run(
+        "Express.js mélyebben",
+        "Middleware, routing és REST API-k",
+        teacher2
+    ).lastInsertRowid;
+
+    const course7 = insertCourse.run(
+        "TypeScript kezdőknek",
+        "TS alapok és konfiguráció",
+        teacher3
+    ).lastInsertRowid;
+
     const enroll = db.prepare(`
         INSERT INTO enrollments (course_id, user_id)
         VALUES (?, ?)
@@ -96,6 +161,13 @@ function seed() {
     enroll.run(course1, student1);
     enroll.run(course1, student2);
     enroll.run(course2, student1);
+    enroll.run(course3, student2);
+    enroll.run(course3, student3);
+    enroll.run(course4, student3);
+    enroll.run(course5, student4);
+    enroll.run(course6, student4);
+    enroll.run(course7, student5);
+    enroll.run(course2, student5);
 
     console.log("Seeding kész!");
 }
